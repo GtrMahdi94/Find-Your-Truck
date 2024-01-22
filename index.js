@@ -1,6 +1,9 @@
 
 var comptes=[{login:"admin",password:"admin"}]
-var trucks=[{login:"truck1",password:"truck1",id:"truck1",free:true,tonnage:3.5},{login:"truck2",password:"truck2",id:"truck2",free:true,tonnage:7},{login:"truck3",password:"truck3",id:"truck3",free:true,tonnage:10},{login:"truck4",password:"truck4",id:"truck4",free:true,tonnage:15}]
+var trucks=[{login:"truck1",password:"truck1",id:"truck1",free:true,tonnage:3.5},{login:"truck2",password:"truck2",id:"truck2",free:true,tonnage:7},{login:"truck3",password:"truck3",id:"truck3",free:true,tonnage:10},{login:"truck4",password:"truck4",id:"truck4",free:true,tonnage:15}];
+var trucksOcu=[]
+var tonPrice = 20;
+var kilometrePrice= 1.5
 
 
 
@@ -33,7 +36,7 @@ function test3(){
   $(".info").hide()
   $(".AcceilDiv").show()
 };
-// click botton verif
+// click button verif
 
 $("#btn").on("click",function(){
   var user= $('#login').val()
@@ -59,3 +62,29 @@ $("#btn").on("click",function(){
     }
   }
 });
+// free truck value :
+// click button Search
+$("#btn1").on("click",function(){
+  var distance= $('#distance').val()
+  var poids= $('#poids').val()
+  if ((distance<=0)||(poids<=0)){
+    alert("check your information")
+  }
+  else{
+    for (var i=0 ; i<length.trucks;i++){
+      if ((trucks[i].free===true)&&(trucks[i].tonnage>=poids)){
+          var price=0
+          price=(tonPrice*poids)+(kilometrePrice*distance)
+          trucks[i].free=false
+          var t=truck[i]
+          trucks.slice (i,1)
+          trucksOcu.push(t)
+          alert(price)
+          return price
+          
+      }
+    }
+  }
+  
+})
+
