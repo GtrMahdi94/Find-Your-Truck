@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="index.css">
 
     <meta charset="UTF-8">
@@ -14,20 +15,48 @@
     
     </div>
     <div class="navbar">
-        <div id="Acceil">Acceil</div>
-        <div id="insclog">inscription/login</div>
-        <div id="contact">Contact</div>
-        <div id="about">About</div>
+        <ul class="ff">
+
+        <li onclick="test3()"><a id="Acceil" href="#" >Acceil</a></li>
+        <li onclick="test()"><a id="insclog" href="#">login</a></li>
+        <li onclick="test1()"> <a id="contact" >Contact</a></li>
+        <li onclick="test2()">  <a id="about" >About</a></li>
+        
+       
+      
+        </ul>
+        
+
+    
         
 
     </div>
-    <div class="content" >
-        <iframe id="realBody"src="htmlPages/Acceil.html" width="100%" height="550rem"></iframe>
-    </div>
     
+    <div class="AcceilDiv">
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1MzrLwecXTSxvcbAzEvYeESiXD-eb72E&ehbc=2E312F" width="100%" height="480"></iframe>  
+        <div id="stat">
+            <div >Free Track<div id="frt">0</div></div>
+            <div >Operation on<div id="nmbrop">0</div></div>
+            <div >All Operation<div id="allope">0</div></div>
+        </div>
+       </div>
+       <div class="insc">
+        <div id="qw">
+            
+            Login     :   <input id="login" type="text"><br>
+            Password  :<input id="pass" type="text"><br>
+            <button id="btn">Login</button>
+        </div>
+
+        
+       
+    </div>
+    <div class="contact"></div>
+    <divc class="info"></div>
     <div id="footer">
         <h1 class="Copyright">© Copyright 2024 G.Mahdi</h1>
     </div>
     
 </body>
+<script src="index.js"></script>
 </html>

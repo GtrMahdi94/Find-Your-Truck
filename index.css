@@ -18,7 +18,8 @@
     height: 4rem;
     background-color: rgb(38, 35, 35);
     display: flex;
-    align-items: center;
+
+    align-items:center;
     justify-content: space-between;
     padding-left: 1%;
     padding-right: 1%;
@@ -51,4 +52,34 @@
     align-items: center;
     justify-content: center;
     color: antiquewhite;
+}
+.insc{
+   
+    background-color: rgb(31, 29, 29);
+    color: antiquewhite;
+    
+
+}
+.ff{
+display: flex;
+align-items: center;
+gap: 50px;
+
+
+
+}
+#qw{
+margin-left: 40%;
+
+
+}
+#stat{
+    color: antiquewhite;
+    background-color: rgb(37, 35, 35);
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding-right: 1%;
+    padding-left: 1%;
+
 }
