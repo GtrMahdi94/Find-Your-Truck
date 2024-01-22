@@ -1,9 +1,10 @@
 
 var comptes=[{login:"admin",password:"admin"}]
 var trucks=[{login:"truck1",password:"truck1",id:"truck1",free:true,tonnage:3.5},{login:"truck2",password:"truck2",id:"truck2",free:true,tonnage:7},{login:"truck3",password:"truck3",id:"truck3",free:true,tonnage:10},{login:"truck4",password:"truck4",id:"truck4",free:true,tonnage:15}];
-var trucksOcu=[]
+var trucksOcu=[{login:"truck5",password:"truck",id:"truck5",free:false,tonnage:3.5}]
 var tonPrice = 20;
-var kilometrePrice= 1.5
+var kilometrePrice= 1.5;
+
 
 
 
@@ -36,6 +37,16 @@ function test3(){
   $(".info").hide()
   $(".AcceilDiv").show()
 };
+//function counter :
+function makecounter() {
+  var count = 0;
+  function counter() {
+    count ++;
+    return count;
+  }
+  return counter;
+};
+var counter=makecounter();
 // click button verif
 
 $("#btn").on("click",function(){
@@ -77,13 +88,17 @@ $("#btn1").on("click",function(){
           price=(tonPrice*poids)+(kilometrePrice*distance)
           trucks[i].free=false
           var t=truck[i]
-          trucks.slice (i,1)
+          trucks.splite(i,1)
           trucksOcu.push(t)
+          counter()
           alert(price)
           return price
           
+      }else{
+        alert ("no truck free now ! please try later /*-*/")
       }
     }
+    
   }
   
 })
