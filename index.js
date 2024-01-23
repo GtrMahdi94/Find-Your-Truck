@@ -114,7 +114,7 @@ $("#btn1").on("click",function(){
         
           
       }else{
-        alert ("no truck free now ! please try later /*-*/")
+        return price
       }
     }
     
