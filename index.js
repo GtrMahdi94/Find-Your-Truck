@@ -2,8 +2,8 @@
 var comptes=[{login:"admin",password:"admin"}]
 var trucks=[{login:"truck1",password:"truck1",id:"truck1",free:true,tonnage:3.5},{login:"truck2",password:"truck2",id:"truck2",free:true,tonnage:7},{login:"truck3",password:"truck3",id:"truck3",free:true,tonnage:10},{login:"truck4",password:"truck4",id:"truck4",free:true,tonnage:15}];
 var trucksOcu=[{login:"truck5",password:"truck",id:"truck5",free:false,tonnage:3.5}]
-var tonPrice = 20;
-var kilometrePrice= 1.5;
+var tp = 20;
+var kp= 1.5;
 var messages=[]
 var frt=trucks.length
 var twn=trucksOcu.length
@@ -91,23 +91,27 @@ $("#btn").on("click",function(){
 $("#btn1").on("click",function(){
   var distance= $('#distance').val()
   var poids= $('#Poids').val()
+  var price=0
+  var t
   console.log(distance)
   console.log(poids)
-  if ((distance<0)||(poids<0)){
+  if ((distance<=0)||(poids<=0)){
     alert("check your information")
   }
   else{
-    for (var i=0 ; i<length.trucks;i++){
+    for (var i=0 ; i<trucks.length;i++){
       if ((trucks[i].free===true)&&(trucks[i].tonnage>=poids)){
-          var price=0
-          price=(tonPrice*poids)+(kilometrePrice*distance)
+          
+          price=(tp*poids)+(kp*distance)
+          console.log(price)
           trucks[i].free=false
-          var t=truck[i]
-          trucks.split(i,1)
+          t=trucks[i]
+          trucks.splice(i,1)
           trucksOcu.push(t)
           all=counter()
-          alert(price)
+          alert(`price is ${price}`)
           return price
+        
           
       }else{
         alert ("no truck free now ! please try later /*-*/")

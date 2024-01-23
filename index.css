@@ -28,19 +28,19 @@
     color: antiquewhite;
 }
 #insclog{
-    height: 25rem;
+    
     color: antiquewhite;
 
 }
 #contact{
     color: antiquewhite;
-    background-image: url('/images/img1.jpg');
+   
 
 
 }
 #about{
     color: antiquewhite;
-    background-image: url('/images/img1.jpg')
+   
 
 
 }
@@ -95,6 +95,8 @@ align-items: center;
 .findTruck{
     height: 25rem;
     background-image: url("./images/img1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     color:antiquewhite;
     display: flex;
     padding-right: 20%;
