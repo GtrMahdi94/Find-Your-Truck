@@ -4,37 +4,50 @@ var trucks=[{login:"truck1",password:"truck1",id:"truck1",free:true,tonnage:3.5}
 var trucksOcu=[{login:"truck5",password:"truck",id:"truck5",free:false,tonnage:3.5}]
 var tonPrice = 20;
 var kilometrePrice= 1.5;
+var messages=[]
+var frt=trucks.length
+var twn=trucksOcu.length
+var all
+// compteur laison
+$("#frt").append(frt)
+$("#nmbrop").append(twn)
+$("#allope").append(all)
+//-----------------------------------------------------------
 
 
 
 
 $(".insc").hide()
 $(".contact").hide()
-$(".info").hide()
+$(".about").hide()
 $(".findTruck").hide()
 
 function test(){
   $(".AcceilDiv").hide()
   $(".contact").hide()
-  $(".info").hide()
+  $(".about").hide()
+  $(".findTruck").hide()
   $(".insc").show()
 }
 function test1(){
   $(".AcceilDiv").hide()
-  $(".info").hide()
+  $(".about").hide()
   $(".insc").hide()
+  $(".findTruck").hide()
   $(".contact").show()
 }
 function test2(){
   $(".AcceilDiv").hide()
   $(".insc").hide()
   $(".contact").hide()
-  $(".info").show()
+  $(".findTruck").hide()
+  $(".about").show()
 }
 function test3(){
   $(".insc").hide()
   $(".contact").hide()
-  $(".info").hide()
+  $(".about").hide()
+  $(".findTruck").hide()
   $(".AcceilDiv").show()
 };
 //function counter :
@@ -73,7 +86,7 @@ $("#btn").on("click",function(){
     }
   }
 });
-// free truck value :
+
 // click button Search
 $("#btn1").on("click",function(){
   var distance= $('#distance').val()
@@ -90,7 +103,7 @@ $("#btn1").on("click",function(){
           var t=truck[i]
           trucks.splite(i,1)
           trucksOcu.push(t)
-          counter()
+          all=counter()
           alert(price)
           return price
           
@@ -102,4 +115,12 @@ $("#btn1").on("click",function(){
   }
   
 })
-
+// Click button Send 
+$("#btn2").on("click",function(){
+var email=$('#email').val()
+var message=$('#msg').val()
+var x={ email :message
+}
+messages.push(x)
+})
+//
