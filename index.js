@@ -90,8 +90,10 @@ $("#btn").on("click",function(){
 // click button Search
 $("#btn1").on("click",function(){
   var distance= $('#distance').val()
-  var poids= $('#poids').val()
-  if ((distance<=0)||(poids<=0)){
+  var poids= $('#Poids').val()
+  console.log(distance)
+  console.log(poids)
+  if ((distance<0)||(poids<0)){
     alert("check your information")
   }
   else{
@@ -101,7 +103,7 @@ $("#btn1").on("click",function(){
           price=(tonPrice*poids)+(kilometrePrice*distance)
           trucks[i].free=false
           var t=truck[i]
-          trucks.splite(i,1)
+          trucks.split(i,1)
           trucksOcu.push(t)
           all=counter()
           alert(price)
